@@ -9,11 +9,11 @@
 7. docker run -d -p 8085:8085 mansigandhi003/pyservices3
 8. docker run -d -p 8086:8086 mansigandhi003/pyservices3
 9. Then go to your terraform scripts to run the aws-eks cluster creation
-a. Perform 2 basic commands
-i. Terraform init
-ii. Terraform plan
-iii. Terraform apply
-b. After the terraform has been successfully executed perform the following steps:
+  Perform 2 basic commands
+   Terraform init
+   Terraform plan
+   Terraform apply
+10. After the terraform has been successfully executed perform the following steps:
 i. terraform output config_map_aws_auth > config_map_aws_auth.yaml &&
 ii. terraform output kubeconfig > ~/.kube/config-terraform-eks-converter &&
 iii. cp ~/.kube/ config-terraform-eks-converter  ~/.kube/config &&
@@ -25,7 +25,8 @@ viii. terraform output config_map_aws_auth> /tmp/config-map-aws-auth.yml
 vix. kubectl apply -f /tmp/config-map-aws-auth.yml
 vx. kubectl create -f https://raw.githubusercontent.com/dinorows/TCO490/master/kubernetes-dashboard-15.yaml
 vxi. kubectl proxy --port=8080 --disable-filter=true
-c. Then run your Kubernetes deployment and service files accordingly
+
+11. Then run your Kubernetes deployment and service files accordingly
 i. kubectl apply -f Deployment/deployment4.yaml
 ii. kubectl apply -f Deployment/deployment3.yaml
 iii. kubectl apply -f Deployment/deployment2.yaml
@@ -40,7 +41,7 @@ j. You will see an external IP generated for the LoadBalancer k8s pod, wait for 
 few minutes and hit the external IP on your browser, you will see your website
 running on that IP
 
-11. Now the monitoring part of the project, run all the deployment and service files related
+12. Now the monitoring part of the project, run all the deployment and service files related
 to Prometheus and Grafana
 a. Kubectl create namespace monitoring
 b. Kubectl create -f clusterRole.yaml
