@@ -1,0 +1,163 @@
+{
+  "version": 4,
+  "terraform_version": "0.12.24",
+  "serial": 49,
+  "lineage": "cf107ff5-7a56-787e-642b-f9a97c0ced5b",
+  "outputs": {
+    "kubeversion": {
+      "value": "1.15",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "aws_availability_zones",
+      "name": "available",
+      "provider": "provider.aws",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "all_availability_zones": null,
+            "blacklisted_names": null,
+            "blacklisted_zone_ids": null,
+            "filter": null,
+            "group_names": [
+              "us-west-2"
+            ],
+            "id": "2020-04-07 15:42:35.02727 +0000 UTC",
+            "names": [
+              "us-west-2a",
+              "us-west-2b",
+              "us-west-2c",
+              "us-west-2d"
+            ],
+            "state": null,
+            "zone_ids": [
+              "usw2-az1",
+              "usw2-az2",
+              "usw2-az3",
+              "usw2-az4"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_internet_gateway",
+      "name": "demo",
+      "provider": "provider.aws",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "igw-085cac404fb81073c",
+            "owner_id": "173432647194",
+            "tags": {
+              "Name": "terraform-eks-demo"
+            },
+            "vpc_id": "vpc-0e92879fc2b01d861"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "demo",
+      "each": "list",
+      "provider": "provider.aws",
+      "instances": []
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "demo",
+      "each": "list",
+      "provider": "provider.aws",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:173432647194:subnet/subnet-08ecdb89874152f0e",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-west-2a",
+            "availability_zone_id": "usw2-az1",
+            "cidr_block": "10.0.0.0/24",
+            "id": "subnet-08ecdb89874152f0e",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "map_public_ip_on_launch": false,
+            "owner_id": "173432647194",
+            "tags": {
+              "Name": "terraform-eks-demo-node",
+              "kubernetes.io/cluster/terraform-eks-demo": "shared"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0e92879fc2b01d861"
+          }
+        },
+        {
+          "index_key": 1,
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:173432647194:subnet/subnet-0338972730172d7b7",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "us-west-2b",
+            "availability_zone_id": "usw2-az2",
+            "cidr_block": "10.0.1.0/24",
+            "id": "subnet-0338972730172d7b7",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "map_public_ip_on_launch": false,
+            "owner_id": "173432647194",
+            "tags": {
+              "Name": "terraform-eks-demo-node",
+              "kubernetes.io/cluster/terraform-eks-demo": "shared"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0e92879fc2b01d861"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_vpc",
+      "name": "demo",
+      "provider": "provider.aws",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:173432647194:vpc/vpc-0e92879fc2b01d861",
+            "assign_generated_ipv6_cidr_block": false,
+            "cidr_block": "10.0.0.0/16",
+            "default_network_acl_id": "acl-05ce3499701371340",
+            "default_route_table_id": "rtb-048beda2b7127bc51",
+            "default_security_group_id": "sg-01222db60386b32bc",
+            "dhcp_options_id": "dopt-ea8e2392",
+            "enable_classiclink": false,
+            "enable_classiclink_dns_support": false,
+            "enable_dns_hostnames": false,
+            "enable_dns_support": true,
+            "id": "vpc-0e92879fc2b01d861",
+            "instance_tenancy": "default",
+            "ipv6_association_id": "",
+            "ipv6_cidr_block": "",
+            "main_route_table_id": "rtb-048beda2b7127bc51",
+            "owner_id": "173432647194",
+            "tags": {
+              "Name": "terraform-eks-demo-node",
+              "kubernetes.io/cluster/terraform-eks-demo": "shared"
+            }
+          },
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    }
+  ]
+}

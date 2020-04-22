@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:   
+ name: python-deployment3
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: python-deployment3
+    spec:
+      containers:
+        - image: "mansigandhi003/pyservices3:latest"
+          imagePullPolicy: Always
+          name: python-deployment3
+          ports:
+            - containerPort: 8085
