@@ -1,13 +1,13 @@
 # currency-converter-webapp
 
-1. docker pull mansigandhi003/webapp
-2. docker pull mansigandhi003/pyservices3
-3. docker pull mansigandhi003/pyservice2
-4. docker pull mansigandhi003/pyservice1
-5. docker run -d -p 3000:3000 mansigandhi003/webapp
-6. docker run -d -p 8081:8081 mansigandhi003/pyservice1
-7. docker run -d -p 8085:8085 mansigandhi003/pyservices3
-8. docker run -d -p 8086:8086 mansigandhi003/pyservices3
+1. docker pull mansigandhi003/currencyconv:latest
+2. docker pull mansigandhi003/historic:latest
+3. docker pull mansigandhi003/bff:latest
+4. docker pull mansigandhi003/app:latest
+5. docker run -d -p 8081:8081 mansigandhi003/currencyconv:latest
+6. docker run -d -p 8083:8083 mansigandhi003/historic:latest
+7. docker run -d -p 8000:8000 ansigandhi003/bff:latest
+8. docker run -d -p 3000:3000 mansigandhi003/app:latest
 9. Then go to your terraform scripts to run the aws-eks cluster creation
   Perform 2 basic commands
    Terraform init
