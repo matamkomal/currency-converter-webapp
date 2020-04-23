@@ -1,17 +1,17 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:   
- name: python-deployment2
+ name: bff-deployment
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        app: python-deployment2
+        app: bff-deployment
     spec:
       containers:
-        - image: "mansigandhi003/pyservice2:v1.0"
+        - image: "mansigandhi003/bff:latest"
           imagePullPolicy: Always
-          name: python-deployment2
+          name: bff-deployment
           ports:
-            - containerPort: 8086
+            - containerPort: 8000

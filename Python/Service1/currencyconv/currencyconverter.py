@@ -7,10 +7,10 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
-
 @app.route("/currencyconverter", methods=['POST'])
 def currencyconverter():
     val = request.get_json()
+    print(val)
     response = requests.get(
       url="http://data.fixer.io/api/convert?access_key=3da6cb2c3b9dd542ecd9f3bd7dbbe8e8&from="+val["fromc"]+"&to="+val["toc"]+"&amount="+val["amount"]+""
     )
@@ -21,5 +21,5 @@ def currencyconverter():
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8081)
+    app.run(host='0.0.0.0', port=8081, debug=True)
 

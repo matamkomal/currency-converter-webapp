@@ -24,6 +24,6 @@ WORKDIR /app
 
 RUN pip3 install -r requirements.txt
 
-EXPOSE 8085
+EXPOSE 8083
 
 ENTRYPOINT ["python3", "timeseries.py"]

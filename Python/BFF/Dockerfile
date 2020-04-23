@@ -18,12 +18,12 @@ RUN apt-get install -y python3
 RUN apt install -y python3-pip
 
 
-COPY SymbolsFolder /app
+COPY Backbone /app
 
 WORKDIR /app
 
 RUN pip3 install -r requirements.txt
 
-EXPOSE 8086
+EXPOSE 8000
 
-ENTRYPOINT ["python3", "SymbolService.py"]
+ENTRYPOINT ["python3", "BFF.py"]

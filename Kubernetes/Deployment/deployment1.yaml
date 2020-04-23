@@ -1,17 +1,17 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:   
- name: python-deployment1
+ name: currency-deployment
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        app: python-deployment1
+        app: currency-deployment
     spec:
       containers:
-        - image: "mansigandhi003/pyservice1:v1.0"
+        - image: "mansigandhi003/currencyconv:latest"
           imagePullPolicy: Always
-          name: python-deployment1
+          name: currency-deployment
           ports:
             - containerPort: 8081

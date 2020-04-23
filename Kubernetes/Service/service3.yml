@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: python-deployment3
+  name: historic-deployment
 spec:
   type: LoadBalancer
   ports:
-  - port: 8085
-    targetPort: 8085
+  - port: 8083
+    targetPort: 8083
   selector:
-    app: python-deployment3
+    app: historic-deployment

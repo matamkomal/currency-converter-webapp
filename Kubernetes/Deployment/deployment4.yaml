@@ -1,17 +1,17 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:   
- name: react-deployment1
+ name: webapp-deployment1
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        app: react-deployment1
+        app: webapp-deployment1
     spec:
       containers:
-        - image: "mansigandhi003/webapp:1.0"
+        - image: "mansigandhi003/app:latest"
           imagePullPolicy: Always
-          name: react-deployment1
+          name: webapp-deployment1
           ports:
             - containerPort: 3000
